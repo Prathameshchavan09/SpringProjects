@@ -8,12 +8,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import springmvc.model.User;
+import springmvc.service.UserService;
+
 
 @Controller
 public class registerController {
 
 	@Autowired
-	private UserDao userDao;
+	private UserService userService;
 	
 	@RequestMapping("/home")
 	public String home() {
@@ -23,12 +25,16 @@ public class registerController {
 	
 
 	
-	@RequestMapping(path="processform",method=RequestMethod.POST)
+	@RequestMapping(path="/processform", method=RequestMethod.POST)
 	private String handler(@ModelAttribute("user") User user,Model model) {
 		
-		System.out.println(user);
-		return this.userDao.createUser();
 		
+		
+		System.out.println(user);
+		 this.userService.createUser(user);
+		 
+		 
+		 return "sucess";
 		
 		
 		

@@ -1,6 +1,8 @@
 package springmvc.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 
@@ -8,11 +10,14 @@ import javax.persistence.Id;
 public class User {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private String email;
 	private String name;
 	private String password;
-	private String contact;
+	private long contact;
+	
+	
 	public String getEmail() {
 		return email;
 	}
@@ -31,10 +36,10 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getContact() {
+	public long getContact() {
 		return contact;
 	}
-	public void setContact(String contact) {
+	public void setContact(long contact) {
 		this.contact = contact;
 	}
 	@Override
