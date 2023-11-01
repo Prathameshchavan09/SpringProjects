@@ -23,6 +23,15 @@ public class registerController {
 		return "register";
 	}
 	
+	public String DataPassControToView(Model model) {
+		
+		
+		model.addAttribute("Register" , "Registration Page");
+		model.addAttribute("Description" , "Developed using Spring MVC");
+		
+		return null;
+		
+	}
 
 	
 	@RequestMapping(path="/processform", method=RequestMethod.POST)

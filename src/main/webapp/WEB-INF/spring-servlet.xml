@@ -14,7 +14,6 @@
 
    <tx:annotation-driven />
 
-	<tx:annotation-driven />
 	<!-- controller of model and database -->
 	<context:component-scan base-package="springmvc"></context:component-scan>
 
@@ -68,8 +67,8 @@
 		<property name="sessionFactory" ref="factory"></property>
 	</bean>
 	
-	 <bean class= "org.springframework.orm.hibernate5.HibernateTransactionManager" name= "transactionManager"> 
-		<property name= "sessionFactory" ref= "factory"></property> 
+	 <bean class= "org.springframework.orm.hibernate5.HibernateTransactionManager" name="transactionManager"> 
+		<property name="sessionFactory" ref= "factory"></property> 
 		</bean>
 
 </beans>
